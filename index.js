@@ -39,8 +39,8 @@ const verifyToken = (req, res, next) => {
 
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.q12amc9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-
+// const uri = `mongodb+srv://course_management_system:UcEfVqgA1vG22AG8@cluster0.q12amc9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = "mongodb+srv://course_management_system:ZEnLQIGn3mhZQnZ4@cluster0.q12amc9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
@@ -91,11 +91,7 @@ async function run() {
       res.send(result)
     })
 
-    app.get('/all-new-courses', async (req, res) => {
-      const cursor = courseCollection.find()
-      const result = await cursor.toArray()
-      res.send(result)
-    })
+  
 
     app.get('/courses', async (req, res) => {
 
@@ -207,8 +203,8 @@ async function run() {
 
 
     // Send a ping to confirm a successful connection
-    // await client.db("admin").command({ ping: 1 });
-    // console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
