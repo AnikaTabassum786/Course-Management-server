@@ -91,6 +91,15 @@ async function run() {
       res.send(result)
     })
 
+    app.get('/all-new-courses', async (req, res) => {
+      // const sortField = ({ createdDate: -1 })
+      // const limitNum = 6
+      const cursor = courseCollection.find()
+      const result = await cursor.toArray()
+      res.send(result)
+    })
+
+
   
 
     app.get('/courses', async (req, res) => {
