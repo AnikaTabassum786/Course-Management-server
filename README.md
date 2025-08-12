@@ -33,3 +33,7 @@ key features
 6. user can view instructors and their expertise
 
 How to run the project locally: First of all run server side using nodemon index.js and then run client side using npm run dev
+
+About Project: Without login user can view Home, All Courses and Instruction Page. User can view details page but for enroll course user must need to login.
+
+If anyone try to view project, use this user name and password user name: tom@gmail.com password : 123456
